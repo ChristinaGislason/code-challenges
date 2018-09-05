@@ -64,12 +64,12 @@ const addCurve = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const greeting = (word) => {
-  // Solution code here...
-}
+  return word.toUpperCase();
+};
 
 const speaker = (message, callback) => {
-  // Solution code here...
-}
+  return callback(greeting(message));
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
