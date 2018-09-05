@@ -114,14 +114,14 @@ const addNumbers = (num, arr, times, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeOne = (num, input) => {
-  if (num / 3 === num % 2 ) {
+  if (num % 3 === 2) {
     input.pop();
   }
 };
 
 const removeElements = (input, callback) => {
   for (let value of input) {
-    callback();
+    callback(value, input);
   }
   return input;
 };
