@@ -29,8 +29,12 @@ const pushIntoSecond = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const addBonusPoints = (arr) => {
-  // Solution code here...
-}
+  let arrFinalScores = [];
+  for (let value of arr) {
+    arrFinalScores.push(value + 5);
+  }
+  return arrFinalScores;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
