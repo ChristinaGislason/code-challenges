@@ -77,10 +77,10 @@ const speaker = (message, callback) => {
 // Write a function named addValues that takes in an array and a value and adds the value to the array.
 //
 // Then, write a function named addNumbers that takes in four arguments:
-//   - A number to be added to an array
-//   - An array into which the number should be added
-//   - The number of times the number should be added
-//   - A callback function to use to add the numbers to the array (Hint: you already defined it)
+//   num - A number to be added to an array
+//   arr - An array into which the number should be added
+//   times - The number of times the number should be added
+//   callback- A callback function to use to add the numbers to the array (Hint: you already defined it)
 //
 // Within the addNumbers function, invoke the callback function as many times as necessary,
 // based on the third argument of the addNumbers function.
@@ -89,12 +89,15 @@ const speaker = (message, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const addValues = (arr, value) => {
-  // Solution code here...
-}
+  return arr.push(value);
+};
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
-}
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
@@ -111,12 +114,17 @@ const addNumbers = (num, arr, times, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeOne = (num, input) => {
-  // Solution code here...
-}
+  if (num / 3 === num % 2 ) {
+    input.pop();
+  }
+};
 
 const removeElements = (input, callback) => {
-  // Solution code here...
-}
+  for (let value of input) {
+    callback();
+  }
+  return input;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
