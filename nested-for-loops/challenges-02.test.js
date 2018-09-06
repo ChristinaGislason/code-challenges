@@ -54,8 +54,18 @@ const grandTotal = (hours, stores) => {
 // ------------------------------------------------------------------------------------------------
 
 const salesData = (data) => {
-  // Solution code here...
+  let arrFormattedData = [];
+  data.forEach(function(salesPerHr, index) {
+    let hourObj =  {
+      sales: `${salesPerHr} cookies`,
+      time: hoursOpen[index],
+    };
+    arrFormattedData.push(hourObj);
+  });
+  return arrFormattedData;
 };
+
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
