@@ -4,8 +4,8 @@
 // CHALLENGE 1
 //
 // Write a function named pushIntoSecond which takes in an array and uses a for loop
-// to push all of the elements from the initial array into a second array. 
-// 
+// to push all of the elements from the initial array into a second array.
+//
 // Return the second array.
 // ------------------------------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ const pushIntoSecond = (arr) => {
 // and adds five bonus points to each score.
 //
 // Use the for...of syntax.
-// 
+//
 // Return an array of scores that have had the bonus points added.
 // ------------------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ const addBonusPoints = (arr) => {
 // CHALLENGE 3
 //
 // Write a function named addCurve that takes in an array of raw test scores and increases each score by 5%.
-// 
+//
 // Use the for...in syntax.
 //
 // Return an array of curved scores;
@@ -52,14 +52,14 @@ const addCurve = (arr) => {
     arrFinalScores.push(arr[index] * 1.05);
   }
   return arrFinalScores;
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
 //
-// Write a function named greeting that takes in a string and returns the string in all uppercase letters. 
-// 
-// Then, write a function named speaker that takes in a string and a callback function. 
+// Write a function named greeting that takes in a string and returns the string in all uppercase letters.
+//
+// Then, write a function named speaker that takes in a string and a callback function.
 // The speaker function should return the string in all uppercase letters only by invoking the callback.
 // ------------------------------------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ const addNumbers = (num, arr, times, callback) => {
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
 //
-// Write a function named removeOne that takes in a number and an array. 
+// Write a function named removeOne that takes in a number and an array.
 // If the number divided by three has a remainder of two, pop one element off of the array.
 // Hint: you may want to look into the modulo operation.
 //
@@ -134,7 +134,7 @@ const removeElements = (input, callback) => {
 
 const removeWithForEach = (input, callback) => {
   input.forEach( (num) => {
-  callback (num, input); 
+    callback (num, input);
   });
   return input;
 };
@@ -152,14 +152,14 @@ const removeWithForEach = (input, callback) => {
 
 const removeWithAnon = (input) => {
   // Solution code here...
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 9
 //
-// Write a function named createList that takes in an array of the current store intentory. 
+// Write a function named createList that takes in an array of the current store intentory.
 //
-// The inventory is formatted like this: 
+// The inventory is formatted like this:
 // [
 //   { name: 'apples', available: true },
 //   { name: 'pears', available: true },
@@ -168,32 +168,45 @@ const removeWithAnon = (input) => {
 //   { name: 'blueberries', available: false }
 // ]
 //
-// This function should use forEach to populate your grocery list based on the store's inventory. 
-// If the item is available, add it to your list. Return the final list. 
+// This function should use forEach to populate your grocery list based on the store's inventory.
+// If the item is available, add it to your list. Return the final list.
 // ------------------------------------------------------------------------------------------------
 
 const createList = (availableItems) => {
   // Solution code here...
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 10
 //
-// Write a function named fizzbuzz that takes in an array of numbers. 
+// Write a function named fizzbuzz that takes in an array of numbers.
 //
 // Iterate over the array using forEach to determine the output based on several rules:
 //   - If a number is divisible by 3, add the word "Fizz" to the output array.
 //   - If the number is divisible by 5, add the word "Buzz" to the output array.
 //   - If the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
-//   - Otherwise, add the number to the output array. 
+//   - Otherwise, add the number to the output array.
 //
 // Return the resulting output array.
 // ------------------------------------------------------------------------------------------------
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
-}
+  const answer = [];
+  arr.forEach( (num) => {
+    if (num % 3 === 0) {
+      answer.push('Fizz');
+    } else if (num % 5 === 0) {
+      answer.push('Buzz');
+    } else if (num % 15 === 0) {
+      answer.push('Fizz Buzz');
+    } else {
+      answer.push(num);
+    }
+  });
 
+  return answer;
+};
+// move num % 15 to the top.
 // ------------------------------------------------------------------------------------------------
 // TESTS
 //
@@ -262,7 +275,7 @@ describe('Testing challenge 8', () => {
 });
 
 describe('Testing challenge 9', () => {
-  const inventory = [ { name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false } ];
+  const inventory = [ { name: 'apples', available: true, }, { name: 'pears', available: true, }, { name: 'oranges', available: false, }, { name: 'bananas', available: true, }, { name: 'blueberries', available: false, } ];
 
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual([ 'apples', 'pears', 'bananas' ]);
