@@ -7,10 +7,14 @@
 // Hint: refresh on how to access elements at a specific index in an array.
 // ------------------------------------------------------------------------------------------------
 
-const nestedArray = [ [ [1, 2, 3], [4, 5, 6] ], [ [7, 8, 9], [10, 11, 12] ], [ [13, 14, 15], [16, 17, 18] ] ];
+const nestedArray = [
+  [[1, 2, 3], [4, 5, 6]],
+  [[7, 8, 9], [10, 11, 12]],
+  [[13, 14, 15], [16, 17, 18]]
+];
 
-const findFourteen = (array) => {
-  return nestedArray[2][0][1];
+const findFourteen = array => {
+  return array[2][0][1];
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -21,19 +25,34 @@ const findFourteen = (array) => {
 // ------------------------------------------------------------------------------------------------
 
 const errands = [
-  { store: 'Grocery store',
-    items: [ { name: 'Eggs', quantity: 12 }, { name: 'Milk', quantity: 1 }, { name: 'Apples', quantity: 3 }]
+  {
+    store: 'Grocery store',
+    items: [
+      { name: 'Eggs', quantity: 12 },
+      { name: 'Milk', quantity: 1 },
+      { name: 'Apples', quantity: 3 }
+    ]
   },
-  { store: 'Drug store',
-    items: [ { name: 'Toothpaste', quantity: 1 }, { name: 'Toothbrush', quantity: 3 }, { name: 'Mouthwash',quantity: 1 } ]
+  {
+    store: 'Drug store',
+    items: [
+      { name: 'Toothpaste', quantity: 1 },
+      { name: 'Toothbrush', quantity: 3 },
+      { name: 'Mouthwash', quantity: 1 }
+    ]
   },
-  { store: 'Pet store',
-    items: [ { name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 } ]
+  {
+    store: 'Pet store',
+    items: [
+      { name: 'Cans of food', quantity: 8 },
+      { name: 'Treats', quantity: 24 },
+      { name: 'Leash', quantity: 1 }
+    ]
   }
 ];
 
-const howManyTreats = (arr) => {
-  return errands[2].items[1].quantity;
+const howManyTreats = arr => {
+  return arr[2].items[1].quantity;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -54,9 +73,7 @@ const howManyTreats = (arr) => {
 // The top row of the board is considered row zero and row numbers increase as they go down.
 // ------------------------------------------------------------------------------------------------
 
-const battleship = (board, row, col) => {
-
-};
+const battleship = (board, row, col) => {};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -68,15 +85,15 @@ const battleship = (board, row, col) => {
 // For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 // ------------------------------------------------------------------------------------------------
 
-const calculateProduct = (numbers) => {
-  //let outterArr = [];
+const calculateProduct = numbers => {
+  let product = 1;
 
-  let innerArr = [1,2,3,4]; // 24
-  let productOfArr = [];
-  innerArr.forEach( function(numbers) {
-    innerArr[0] * innerArr[2];
-
-  }  
+  numbers.forEach(function(innerNumbers) {
+    innerNumbers.forEach(function(number) {
+      product *= number;
+    });
+  });
+  return product;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -93,10 +110,10 @@ const weeklyTemperatures = [
   [66, 64, 58, 65, 71, 57, 60],
   [57, 65, 65, 70, 72, 65, 51],
   [55, 54, 60, 53, 59, 57, 61],
-  [65, 56, 55, 52, 55, 62, 57],
+  [65, 56, 55, 52, 55, 62, 57]
 ];
 
-const averageDailyTemperature = (weather) => {
+const averageDailyTemperature = weather => {
   // Solution code here...
 };
 
@@ -115,10 +132,10 @@ let lowestWeeklyTemperatureData = [
   [33, 64, 58, 65, 71, 57, 60],
   [40, 45, 33, 53, 44, 59, 48],
   [55, 54, 60, 53, 59, 57, 61],
-  [65, 56, 55, 52, 55, 62, 57],
+  [65, 56, 55, 52, 55, 62, 57]
 ];
 
-const lowestWeeklyAverage = (weather) => {
+const lowestWeeklyAverage = weather => {
   // Solution code here...
 };
 
@@ -147,7 +164,7 @@ const lowestWeeklyAverage = (weather) => {
 // Here is a sample data set: '1,1,1\n4,4,4\n9,9,9'
 // ------------------------------------------------------------------------------------------------
 
-const excel = (str) => {
+const excel = str => {
   // Solution code here...
 };
 
@@ -173,7 +190,7 @@ const excel = (str) => {
 // ];
 // ------------------------------------------------------------------------------------------------
 
-const detectTicTacToeWin = (board) => {
+const detectTicTacToeWin = board => {
   // Solution code here...
 };
 
@@ -204,7 +221,7 @@ const detectTicTacToeWin = (board) => {
 // ];
 // ------------------------------------------------------------------------------------------------
 
-const minesweeper = (board) => {
+const minesweeper = board => {
   // Solution code here...
 };
 
@@ -224,8 +241,8 @@ describe('Testing challenge 1', () => {
     expect(findFourteen(nestedArray)).toStrictEqual(14);
   });
   test('It should also work for other input arrays', () => {
-    expect(findFourteen([[], [], [[0,1,2]]])).toStrictEqual(1);
-  })
+    expect(findFourteen([[], [], [[0, 1, 2]]])).toStrictEqual(1);
+  });
 });
 
 describe('Testing challenge 2', () => {
@@ -233,8 +250,10 @@ describe('Testing challenge 2', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
   test('It should also work for other arrays of objects', () => {
-    expect(howManyTreats([0,0,{items: [0, {quantity: 7}]}])).toStrictEqual(7);
-  })
+    expect(
+      howManyTreats([0, 0, { items: [0, { quantity: 7 }] }])
+    ).toStrictEqual(7);
+  });
 });
 
 describe('Testing challenge 3', () => {
@@ -242,7 +261,7 @@ describe('Testing challenge 3', () => {
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
     ['#', ' ', ' ', ' '],
-    [' ', ' ', '#', '#'],
+    [' ', ' ', '#', '#']
   ];
 
   test('It should return "hit" when it hits a boat', () => {
@@ -258,14 +277,16 @@ describe('Testing challenge 3', () => {
 
 describe('Testing challenge 4', () => {
   test('It should multiply all the numbers together', () => {
-    expect(calculateProduct([[1,2], [3,4], [5,6]])).toStrictEqual(720);
+    expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
 
   test('It should return zero if there are any zeroes in the data', () => {
-    expect(calculateProduct([[2, 3, 4, 6, 0], [4, 3, 7], [2, 4, 6]])).toStrictEqual(0);
+    expect(
+      calculateProduct([[2, 3, 4, 6, 0], [4, 3, 7], [2, 4, 6]])
+    ).toStrictEqual(0);
   });
   test('It should work even if some of the arrays contain no numbers', () => {
-    expect(calculateProduct([[1,2], [], [3,4,5]])).toStrictEqual(120);
+    expect(calculateProduct([[1, 2], [], [3, 4, 5]])).toStrictEqual(120);
   });
 });
 
@@ -294,29 +315,37 @@ describe('Testing challenge 7', () => {
 
 describe('Testing challenge 8', () => {
   test('It should return true if there are three in a row', () => {
-    expect(detectTicTacToeWin([ ['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X'] ])).toStrictEqual(true);
-    expect(detectTicTacToeWin([ ['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
+    expect(
+      detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])
+    ).toStrictEqual(true);
+    expect(
+      detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])
+    ).toStrictEqual(true);
   });
 
   test('It should return false if there are not three in a row', () => {
-    expect(detectTicTacToeWin([ ['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X'] ])).toStrictEqual(false);
+    expect(
+      detectTicTacToeWin([['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X']])
+    ).toStrictEqual(false);
   });
 });
 
 describe('Testing challenge 9', () => {
   test('It should return the number of adjacent bombs', () => {
-    const minefield =
-    [ [ null, null, null, null, '*' ],
-      [ null, null, null, null, '*' ],
-      [ '*', null, null, null, null ],
-      [ null, null, null, '*', null ],
-      [ null, '*', null, null, null ] ];
-    const expected =
-      [ [0, 0, 0, 2, 9],
-        [1, 1, 0, 2, 9],
-        [9, 1, 1, 2, 2],
-        [2, 2, 2, 9, 1],
-        [1, 9, 2, 1, 1] ];
+    const minefield = [
+      [null, null, null, null, '*'],
+      [null, null, null, null, '*'],
+      ['*', null, null, null, null],
+      [null, null, null, '*', null],
+      [null, '*', null, null, null]
+    ];
+    const expected = [
+      [0, 0, 0, 2, 9],
+      [1, 1, 0, 2, 9],
+      [9, 1, 1, 2, 2],
+      [2, 2, 2, 9, 1],
+      [1, 9, 2, 1, 1]
+    ];
     expect(minesweeper(minefield)).toStrictEqual(expected);
   });
 });
