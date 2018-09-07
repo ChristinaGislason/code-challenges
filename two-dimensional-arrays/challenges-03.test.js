@@ -33,7 +33,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  return errand.items[2].name('treats');
+  return errands[2].items[1].quantity;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ const howManyTreats = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const battleship = (board, row, col) => {
-  // Solution code here...
+
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -69,7 +69,14 @@ const battleship = (board, row, col) => {
 // ------------------------------------------------------------------------------------------------
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  //let outterArr = [];
+
+  let innerArr = [1,2,3,4]; // 24
+  let productOfArr = [];
+  innerArr.forEach( function(numbers) {
+    innerArr[0] * innerArr[2];
+
+  }  
 };
 
 // ------------------------------------------------------------------------------------------------
