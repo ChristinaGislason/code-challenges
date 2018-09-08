@@ -30,16 +30,12 @@ const isNum = (num) => {
 //
 // Return an array containing all the matches.
 // ------------------------------------------------------------------------------------------------
-//let matchesArr = [];
 
 const isCapitalized = (string) => {
   let regex = (/[A-Z]\w+/g);
   
   let matches = string.match(regex);
   return matches;
-
-  // matchesArr.push((/^A-Z/).match(string));
-  // return matchesArr;
 };
 
 // ------------------------------------------------------------------------------------------------
