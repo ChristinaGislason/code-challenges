@@ -15,10 +15,10 @@
 // ------------------------------------------------------------------------------------------------
 
 const isNum = (num) => {
-  if ((/\d/).test(num) === 'true') {
-    return 'true';
+  if ((/\d/).test(num)) {
+    return true;
   } else {
-    return 'false';
+    return false;
   }
 };
 
@@ -30,9 +30,16 @@ const isNum = (num) => {
 //
 // Return an array containing all the matches.
 // ------------------------------------------------------------------------------------------------
+//let matchesArr = [];
 
 const isCapitalized = (string) => {
-  // Solution code here...
+  let regex = (/[A-Z]\w+/g);
+  
+  let matches = string.match(regex);
+  return matches;
+
+  // matchesArr.push((/^A-Z/).match(string));
+  // return matchesArr;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -41,6 +48,8 @@ const isCapitalized = (string) => {
 // Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression
 // pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 // ------------------------------------------------------------------------------------------------
+
+
 
 const citiesAtoJ = (cities) => {
   // Solution code here...
