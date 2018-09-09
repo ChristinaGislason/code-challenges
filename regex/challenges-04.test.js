@@ -45,10 +45,16 @@ const isCapitalized = (string) => {
 // pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 // ------------------------------------------------------------------------------------------------
 
-
-
 const citiesAtoJ = (cities) => {
-  // Solution code here...
+  let newArr = [];
+  let regex = (/[A-J]\w+/g);
+
+  cities.forEach((city) => {
+    if (regex.test(city) === true) {
+      newArr.push(city);
+    } 
+  });
+  return newArr;
 };
 
 // ------------------------------------------------------------------------------------------------
