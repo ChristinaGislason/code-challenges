@@ -32,7 +32,7 @@ const howMuchPencil = (name) => {
 
 const wordsToCharList = (input) => {
   let array = [];
-  
+
   for (let i = 0; i < input.length; i++) {
     array.push(input[i]);
   }
@@ -47,9 +47,16 @@ const wordsToCharList = (input) => {
 // (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 // ------------------------------------------------------------------------------------------------
 
+
 const totalSumCSV = (input) => {
+
+  let numArr = input.split(',');
+
   let total = 0;
-  // Solution code here...
+  for (var i = 0; i < numArr.length; i++) {
+    total += parseInt(numArr[i]);
+  }
+
   return total;
 };
 
