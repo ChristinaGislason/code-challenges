@@ -25,21 +25,20 @@ const howMuchPencil = (name) => {
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
 //
-// Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a
-// character of the input string.
+// Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
 //
 // For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 // ------------------------------------------------------------------------------------------------
 
 const wordsToCharList = (input) => {
-  let lettersArr = [];
-  let chars = str.split('');
-
-  wordsToCharList.forEach( (input) => {
-    lettersArr.push(input.split);
-  });
-  return chars[i];
+  let array = [];
+  
+  for (let i = 0; i < input.length; i++) {
+    array.push(input[i]);
+  }
+  return array;
 };
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
