@@ -116,8 +116,18 @@ let characters = [
 ]
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-}
+  // NOTE: why not this below?
+  // return arr.length;
+  let names = [];
+
+  arr.forEach( obj => {
+    // NOTE: Why would we need to use getFrom function?
+    names.push(obj.name);
+  });
+
+  return names.length;
+};
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
