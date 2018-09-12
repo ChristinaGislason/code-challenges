@@ -134,9 +134,21 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = (abilities) => {
-  // Solution code here...
-};
+const extractAbilities = (abilities) => { //abilities = array
+
+return Object.keys(obj) 
+//returns array of [abilities{}, name, weight]
+  values.map = (arr)( => {
+    Object.keys(abilities);
+    Object.value.('name');
+  }  
+
+
+    let newArr = Object.keys(abilities) => (obj) {
+       Object.values('name')
+    })
+
+}
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
