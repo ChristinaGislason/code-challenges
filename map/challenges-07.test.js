@@ -33,7 +33,7 @@ const forEachTwoToThe = (input) => {
 
   let newArr = [];
 
-  input.forEach( (value) => {
+  input.forEach( value => {
     newArr.push(Math.pow(2, value));
   });
 
@@ -49,8 +49,9 @@ const forEachTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const mapTwoToThe = (input) => {
-  // Solution code here...
-}
+  let newArr = input.map(value => Math.pow(2, value));
+  return newArr;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
