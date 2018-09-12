@@ -65,7 +65,7 @@ const mapTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const charCode = (input) => {
-  return input.map( value  => value.charCodeAt(0));  
+  return input.map( value  => value.charCodeAt(0)); 
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -80,7 +80,18 @@ const charCode = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const evenOdd = (input) => {
-  // Solution code here...
+
+  let newArr = input.map( value => {
+    if(value % 2 > 0 ) {
+      return 'odd';
+    } else if (value % 2 === 0) {
+      return 'even';
+    } else {
+      return 'N/A';
+    } 
+  });
+
+  return newArr;
 };
 
 // ------------------------------------------------------------------------------------------------
