@@ -49,7 +49,7 @@ const citiesAtoJ = (cities) => {
   let newArr = [];
   let regex = (/[A-J]\w+/g);
 
-  cities.forEach((city) => {
+  cities.forEach( city => {
     if (regex.test(city) === true) {
       newArr.push(city);
     } 
