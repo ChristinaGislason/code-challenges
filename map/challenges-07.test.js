@@ -30,7 +30,14 @@ const forLoopTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const forEachTwoToThe = (input) => {
-  // Solution code here...
+
+  let newArr = [];
+
+  input.forEach( (value) => {
+    newArr.push(Math.pow(2, value));
+  });
+
+  return newArr;
 };
 
 // ------------------------------------------------------------------------------------------------
