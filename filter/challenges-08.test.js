@@ -10,9 +10,7 @@
 // ------------------------------------------------------------------------------------------------
 
 const oddValues = (input) => {
-  return input.filter( values => values % 2 !== 0);
-  
-  //const result = words.filter(word => word.length > 6);
+  return input.filter(values => values % 2 !== 0)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -23,13 +21,15 @@ const oddValues = (input) => {
 //
 // The callback function to filter should include a regular expression pattern.
 //
-// For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 'hound'].
+// For example, filterStringsWithVowels(['gregor','hound','xyz']) returns ['gregor', 'hound'].
 // ------------------------------------------------------------------------------------------------
 
 
 const filterStringsWithVowels = (input) => {
-  // Solution code here...
+  let regex = (/[aeiou]/i);
+  return input.filter(value => regex.test(value));
 };
+
 
 
 // ------------------------------------------------------------------------------------------------
@@ -42,8 +42,14 @@ const filterStringsWithVowels = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const notInFirstArray = (forbiddenValues, input) => {
-  // Solution code here...
+  let allowedValues = input.filter(value => {
+    if (forbiddenValues.indexOf(value) < 0){
+      return true;
+    }
+  });
+  return allowedValues;
 };
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
