@@ -113,10 +113,16 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, input) => {
-  // Solution code here...
-};
+const extractStat = (statName, input) => input.reduce( (ans, x) => {
+  if (ans !==null) {
+    return ans;
+  } else if (x.stat.name === statName) {
+    return x;
+  } else {
+    return null;
+  }, null)
 
+}
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
 //
@@ -261,9 +267,24 @@ describe('Testing challenge 2', () => {
   });
 });
 
+// describe('Testing challenge 3', () => {
+//   test('It should return any stats that match the input', () => {
+//     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
+//   });
+// });
+
 describe('Testing challenge 3', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
+    expect(extractStat('special-attack', snorlaxData.stats)).toStrictEqual({
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/4/',
+        name: 'special-attack',
+      },
+      effort: 9,
+      baseStat: 65,
+    });
+    expect(extractStat('not a real stat', snorlaxData.stats)).toBeNull();
   });
 });
 
