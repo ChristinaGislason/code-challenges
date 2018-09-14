@@ -113,6 +113,8 @@ const snorlaxData = {
   weight: 4600,
 };
 
+
+//fix syntax below
 const extractStat = (statName, input) => input.reduce( (ans, x) => {
   if (ans !==null) {
     return ans;
@@ -145,7 +147,10 @@ const calculateAverage = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractChildren = input => {
-  // Solution code here...
+
+  .filter( char => /a/i.test(char.name));
+  .reduce( (ans,char) => char.children ? ans.concat(char.children) : ans, []);
+
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -157,9 +162,7 @@ const extractChildren = input => {
 // Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 // ------------------------------------------------------------------------------------------------
 
-const reversedString = (input) => {
-  // Solution code here...
-};
+const reversedString = (input) => input.split('').reduce( (ans, x) => ans + x);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
@@ -170,13 +173,15 @@ const reversedString = (input) => {
 // You are welcome to use the provided isPrime function.
 // ------------------------------------------------------------------------------------------------
 
+
+//1 is not a prime number
 const isPrime = (value) => {
   for (let i = 2; i < value; i++) {
     if (value % i === 0) {
       return false;
     }
   }
-  return value > 1;
+  return value > 1; 
 };
 
 const countPrimeNumbers = (input) => {
