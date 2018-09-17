@@ -35,8 +35,19 @@ const count = (target, input) => {
 // Note: You might need to use the same method more than once.
 // ------------------------------------------------------------------------------------------------
 
+//example: [[1,1,1],[2,2,2],[3,3,3]]
+
 const totalSum = (input) => {
-  // Solution code here...
+
+  return input.reduce( (accumulator, currentValue) => {
+
+    const arrTotal = currentValue.reduce( (accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0);
+
+    return accumulator + arrTotal;
+  }, 0);
+
 };
 
 // ------------------------------------------------------------------------------------------------
