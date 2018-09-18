@@ -76,7 +76,14 @@ const validateEmail = (email) => {
 // ------------------------------------------------------------------------------------------------
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+
+  let regex = /^(\(\d{3}\)|\d{3})[" "|-]?\d{3}[" "|-]?\d{4}$/;
+
+  if (regex.test(phoneNumber) === true) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 
