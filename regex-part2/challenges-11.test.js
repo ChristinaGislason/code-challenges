@@ -51,13 +51,14 @@ const findTagNames = elements => {
 // ------------------------------------------------------------------------------------------------
 
 const validateEmail = (email) => {
-  let regex = /^(\w+\.?)\w+@\w+(\.com|\.org|\.net)$/;
+  let regex = /^(\w+\.)?\w+@\w+\.(com|org|net)$/; // use [A-Za-z0-9] and insert at every \w... because \w will capture underscores!
+  return regex.test(email);
 
-  if (regex.test(email) === true) {
-    return true;
-  } else {
-    return false;
-  }
+  // if (regex.test(email) === true) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -83,7 +84,7 @@ const validateEmail = (email) => {
 
 const validatePhoneNumber = (phoneNumber) => {
 
-  let regex = /^(\(\d{3}\)|\d{3})[" "|-]?\d{3}[" "|-]?\d{4}$/;
+  let regex = /^(\(\d{3}\)|\d{3})[" "|-]?\d{3}[" "|-]?\d{4}$/; // [ -]? instead of using pipes
 
   if (regex.test(phoneNumber) === true) {
     return true;
