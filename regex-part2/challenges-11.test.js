@@ -51,7 +51,13 @@ const findTagNames = elements => {
 // ------------------------------------------------------------------------------------------------
 
 const validateEmail = (email) => {
-  // Solution code here...
+  let regex = /^(\w+\.?)\w+@\w+(\.com|\.org|\.net)$/;
+
+  if (regex.test(email) === true) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 // ------------------------------------------------------------------------------------------------
