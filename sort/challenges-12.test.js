@@ -79,7 +79,10 @@ const alphabetizeBetter = (strs) => {
 // ------------------------------------------------------------------------------------------------
 
 const sortByPrice = (objs) => {
-  // Solution code here...
+  objs.sort(function(a, b) {
+    return a.price - b.price;
+  });
+  return objs;
 };
 
 // ------------------------------------------------------------------------------------------------
