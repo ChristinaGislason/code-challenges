@@ -52,7 +52,16 @@ const sortByLength = (strings) => {
 // ------------------------------------------------------------------------------------------------
 
 const alphabetizeBetter = (strs) => {
-  // Solution code here...
+  strs.sort(function(a ,b) {
+    let stringA = a.toUpperCase();
+    let stringB = b.toUpperCase();
+    if (stringA < stringB) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }); 
+  return strs;
 };
 
 // ------------------------------------------------------------------------------------------------
