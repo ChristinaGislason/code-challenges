@@ -95,7 +95,12 @@ const sortByPrice = (objs) => {
 // ------------------------------------------------------------------------------------------------
 
 const sortNumbersByLength = (nums) => {
-  // Solution code here...
+
+  nums.sort(function(a , b) {
+    return a.toString().length - b.toString().length;
+  });
+  return nums;
+
 };
 
 // -----------------------------------------------------------------------------------------------
