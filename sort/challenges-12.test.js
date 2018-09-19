@@ -8,11 +8,12 @@
 // ------------------------------------------------------------------------------------------------
 
 const sortBackwards = (nums) => {
-  nums.sort(function(a,b) {
-    return b - a;
-  });
-  return nums;
+
+  return nums.sort( (a,b) => b - a );
+
 };
+
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
@@ -36,10 +37,8 @@ const alphabetize = (strings) => strings.sort();
 
 const sortByLength = (strings) => {
  
-  strings.sort(function(a , b) {
-    return a.length - b.length;
-  });
-  return strings;
+ return strings.sort( (a , b) => a.length - b.length );
+ 
 };
 
 // ------------------------------------------------------------------------------------------------
