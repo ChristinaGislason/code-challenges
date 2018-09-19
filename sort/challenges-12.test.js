@@ -124,7 +124,10 @@ const people = [
 ];
 
 const sortPeople = (people) => {
-  // Solution code here...
+  people.sort(function (a, b) {
+    return a.Person.lastName - b.Person.lastname;
+  }); 
+  return people;
 };
 
 // ------------------------------------------------------------------------------------------------
