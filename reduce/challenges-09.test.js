@@ -113,10 +113,18 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, input) => {
-  // Solution code here...
-};
 
+//fix syntax below
+const extractStat = (statName, input) => input.reduce( (ans, x) => {
+  if (ans !==null) {
+    return ans;
+  } else if (x.stat.name === statName) {
+    return x;
+  } else {
+    return null;
+  }, null)
+
+}
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
 //
@@ -139,7 +147,10 @@ const calculateAverage = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractChildren = input => {
-  // Solution code here...
+
+  .filter( char => /a/i.test(char.name));
+  .reduce( (ans,char) => char.children ? ans.concat(char.children) : ans, []);
+
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -151,9 +162,7 @@ const extractChildren = input => {
 // Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 // ------------------------------------------------------------------------------------------------
 
-const reversedString = (input) => {
-  // Solution code here...
-};
+const reversedString = (input) => input.split('').reduce( (ans, x) => ans + x);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
@@ -164,13 +173,15 @@ const reversedString = (input) => {
 // You are welcome to use the provided isPrime function.
 // ------------------------------------------------------------------------------------------------
 
+
+//1 is not a prime number
 const isPrime = (value) => {
   for (let i = 2; i < value; i++) {
     if (value % i === 0) {
       return false;
     }
   }
-  return value > 1;
+  return value > 1; 
 };
 
 const countPrimeNumbers = (input) => {
@@ -261,9 +272,24 @@ describe('Testing challenge 2', () => {
   });
 });
 
+// describe('Testing challenge 3', () => {
+//   test('It should return any stats that match the input', () => {
+//     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
+//   });
+// });
+
 describe('Testing challenge 3', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
+    expect(extractStat('special-attack', snorlaxData.stats)).toStrictEqual({
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/4/',
+        name: 'special-attack',
+      },
+      effort: 9,
+      baseStat: 65,
+    });
+    expect(extractStat('not a real stat', snorlaxData.stats)).toBeNull();
   });
 });
 
