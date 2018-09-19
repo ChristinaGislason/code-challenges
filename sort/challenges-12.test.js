@@ -35,7 +35,11 @@ const alphabetize = (strings) => strings.sort();
 // ------------------------------------------------------------------------------------------------
 
 const sortByLength = (strings) => {
-  // Solution code here...
+ 
+  strings.sort(function(a , b) {
+    return a.length - b.length;
+  });
+  return strings;
 };
 
 // ------------------------------------------------------------------------------------------------
