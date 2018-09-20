@@ -10,16 +10,9 @@
 // For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':'].
 // ------------------------------------------------------------------------------------------------
 
-const firstLetters = (strs) => {
+const firstLetters = (strs) => strs.map(strs => strs.charAt(0));
 
-  return strs.map(strs => strs.charAt(0));
-};
 
-//   let newArr = [];
-//   let value = strs.charAt(0);
-//   strs.forEach((value) {
-//     return newArr.push(value);
-// };
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
