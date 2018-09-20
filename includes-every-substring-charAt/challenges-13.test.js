@@ -52,8 +52,16 @@ const standardizePhoneNumbers = (phoneNumbers) => {
 // ------------------------------------------------------------------------------------------------
 
 const onlyOddChars = (str) => {
-  // Solution code here...
-};
+  let oddChars = '';
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 > 0) {
+      oddChars += str.charAt(i);
+    }
+  }
+  return oddChars;
+};  
+
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
