@@ -23,7 +23,14 @@ const firstLetters = (strs) => strs.map(strs => strs.charAt(0));
 // ------------------------------------------------------------------------------------------------
 
 const findHappiness = (strs) => {
-  // Solution code here...
+  let smileyArr = [];
+
+  strs.forEach(function (string) {
+    if(string.includes(':)') === true) {
+      smileyArr.push(string);
+    }
+  });
+  return smileyArr;
 };
 
 // ------------------------------------------------------------------------------------------------
